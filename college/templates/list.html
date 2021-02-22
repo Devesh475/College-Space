@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if found %}
+    <h3>{{found}} results found</h3>
+    {% else %}
+    <h3>All question papers</h3>
+    {% endif %}
+    {% for paper in papers %}
+        
+        <hr>
+        <p>{{paper.year_of_subject}} Year</p>
+        <p>Semester : {{paper.semester}}</p>
+        <p>Subject : {{paper.name_of_subject}}</p>
+        <p>Subject code : {{paper.code_of_subject}}</p>
+        <p>Term : {{paper.type_of_paper}}</p>
+        {% if paper.question_paper_image %}
+            <img src="{{paper.question_paper_image.url}}" alt="" style="width:18rem;height:25rem">
+        {% endif %}        
+    {% endfor %}
+
+{% endblock %}
