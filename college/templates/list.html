@@ -14,9 +14,8 @@
         <p>Subject : {{paper.name_of_subject}}</p>
         <p>Subject code : {{paper.code_of_subject}}</p>
         <p>Term : {{paper.type_of_paper}}</p>
-        {% if paper.question_paper_image %}
-            <img src="{{paper.question_paper_image.url}}" alt="" style="width:18rem;height:25rem">
-        {% endif %}        
+        <img src="{{paper.question_paper_image.url}}" alt="" style="width:18rem;height:25rem">
+        <a href="{{paper.question_paper_image.url}}" class="btn btn-primary">Download</a>      
     {% endfor %}
 
 {% endblock %}

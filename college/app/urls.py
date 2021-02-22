@@ -8,4 +8,6 @@ urlpatterns = [
     path('uploadnew',newpaper,name='newpaper'),
     path('contact',contact,name="contact"),
     path('search/',search,name="search"),
+    path('login/',loginPage,name="login"),
+    path('logout/',logoutPage,name="logout"),
 ]

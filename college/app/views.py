@@ -1,7 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import QuestionPaperSubmit
 from .models import QuestionPapers
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+from django.contrib.auth import login, logout, authenticate
 
 
 # Create your views here.
@@ -10,6 +13,7 @@ def home(request):
     context = {}
     return render(request, template_name, context)
 
+@login_required
 def newpaper(request):
     form = QuestionPaperSubmit()
     if request.method == "POST":
@@ -43,3 +47,22 @@ def search(request):
         context = {"papers":questions,"found":len(questions)}
         return render(request, template_name, context)
     return render(request, template_name, context)
+
+def loginPage(request):
+    if request.method == "POST":
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            return redirect('/uploadnew')  
+        else:
+            print("error")
+            messages.info(request, "Username or password is incorrect")
+    return render(request, "login.html", {})
+
+def logoutPage(request):
+    logout(request)
+    return render(request, "home.html", {})
