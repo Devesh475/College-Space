@@ -4,18 +4,26 @@
     {% if found %}
     <h3>{{found}} results found</h3>
     {% else %}
-    <h3>All question papers</h3>
+    <h3>All Documents and Question Papers</h3>
     {% endif %}
     {% for paper in papers %}
         
         <hr>
-        <p>{{paper.year_of_subject}} Year</p>
-        <p>Semester : {{paper.semester}}</p>
-        <p>Subject : {{paper.name_of_subject}}</p>
-        <p>Subject code : {{paper.code_of_subject}}</p>
-        <p>Term : {{paper.type_of_paper}}</p>
-        <img src="{{paper.question_paper_image.url}}" alt="" style="width:18rem;height:25rem">
-        <a href="{{paper.question_paper_image.url}}" class="btn btn-primary">Download</a>      
+        <div class="row">
+        <div class="col-md-6">
+            <p>Year {{paper.year}}</p>
+            <p>Semester : {{paper.semester}}</p>
+            <p>Subject : {{paper.name_of_subject}}</p>
+            <p>Subject code : {{paper.code_of_subject}}</p>
+            <p>Term : {{paper.type_of_paper}}</p>
+            <a href="{{paper.question_paper_image.url}}" class="btn btn-primary">View full size</a>
+            <br>
+            <small>View full size image to save it to device.</small>
+        </div>
+        <div class="col-md-6">
+            <a href="{{paper.question_paper_image.url}}" class=""><img src="{{paper.question_paper_image.url}}" alt="" style="width:18rem;height:18rem;border: 1px solid rgb(63, 32, 177)28, 28, 129);"></a>      
+        </div>
+        </div>
     {% endfor %}
 
 {% endblock %}
