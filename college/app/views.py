@@ -19,7 +19,6 @@ def newpaper(request):
     if request.method == "POST":
         form = QuestionPaperSubmit(request.POST or None, request.FILES or None)
         if form.is_valid():
-            print(form.cleaned_data)
             form.save()
     form = QuestionPaperSubmit()
     template_name = "newpaper.html"

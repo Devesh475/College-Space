@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class QuestionPapers(models.Model):
-    year_of_subject = models.CharField(max_length=200, default="Second")
+    year = models.CharField(max_length=200, default="2018")
     name_of_subject = models.CharField(max_length=200)
     code_of_subject = models.CharField(max_length=200)
     semester = models.CharField(max_length=10, default=1)
