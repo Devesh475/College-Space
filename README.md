@@ -22,3 +22,5 @@ The modules involved in this project are :
 
 
 
+### Currently deployed on Heroku
+* Check it out : http://c011egespace.herokuapp.com/
