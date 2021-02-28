@@ -20,5 +20,5 @@ The modules involved in this project are :
 * Create super user to upload new documents by : python manage.py createsuperuser
 * python manage.py runserver
 
-### Its deployed on Heroku currently
-* Check it out : https://c011egespace.herokuapp.com/allpapers
+
+
