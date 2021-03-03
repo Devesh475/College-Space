@@ -1,7 +1,8 @@
 # College-Space
 * This is one place to find all the documents, question papers, notes for College students.
 * Authorised users are only able to upload new documents.
-* Search Functionality is provided to search the documents efficiently
+* Search Functionality is provided to search the documents efficiently.
+* Users can request for new Document which they require.
 
 
 ### TECHNOLOGY USED :
